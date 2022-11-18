@@ -33,6 +33,6 @@
     'installable': True,
     'application': True,
     'sequence': -100,
-    'auto_install': True,
+    'auto_install': False,
     'license': 'OPL-1'
 }
