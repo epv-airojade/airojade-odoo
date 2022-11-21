@@ -64,6 +64,22 @@
 <!--      <field name="target">new</field>-->
     </record>
 
+    <record model="ir.ui.view" id="airo_overtime_request.search">
+      <field name="name">Overtime Request Search</field>
+      <field name="model">airo.overtime.request</field>
+      <field name="arch" type="xml">
+        <search>
+            <field name="name_seq"/>
+            <field name="leave_type"/>
+            <field name="employee_id"/>
+            <field name="date_from"/>
+            <field name="date_to"/>
+            <field name="nbr_hours"/>
+            <field name="state"/>
+        </search>
+      </field>
+    </record>
+
 
     <!-- server action to the one above -->
 <!--

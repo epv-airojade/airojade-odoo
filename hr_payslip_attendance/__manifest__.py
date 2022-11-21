@@ -25,7 +25,8 @@
     'data': [
         # 'security/ir.model.access.csv',
         'views/hr_payslip_attendance.xml',
-        'views/hr_contract.xml'
+        'views/hr_contract.xml',
+        'data/hr_payslip_report.xml',
     ],
     # only loaded in demonstration mode
     'demo': [],
