@@ -1,29 +1,51 @@
 <odoo>
     <data>
-        <record id="view_airo_hr_payslip_attendance_inherit" model="ir.ui.view">
-            <field name="name">hr.payslip.form.inherit</field>
-            <field name="model">hr.payslip</field>
-            <field name="inherit_id" ref="hr_payroll.view_hr_payslip_form" />
-            <field name="arch" type="xml">
-                <xpath expr="//notebook/page[@name='worked_days_input']" position="after">
-                     <page string="Attendance" name="attendance">
-                         <field name="attendance_ids">
-                         </field>
-                     </page>
-                </xpath>
-            </field>
-        </record>
 
         <record id="view_airo_hr_payslip_overtime_inherit" model="ir.ui.view">
             <field name="name">hr.payslip.form.inherit</field>
             <field name="model">hr.payslip</field>
             <field name="inherit_id" ref="hr_payroll.view_hr_payslip_form" />
             <field name="arch" type="xml">
+
                 <xpath expr="//notebook/page[@name='worked_days_input']" position="after">
-                     <page string="Overtime" name="overtime">
+                     <page string="Overtime" name="overtime_page">
                          <field name="overtime_ids">
                          </field>
                      </page>
+                </xpath>
+
+                <xpath expr="//notebook/page[@name='worked_days_input']" position="after">
+                     <page string="Leaves" name="payroll_leaves_page">
+                         <field name="leave_ids_payroll">
+                             <tree>
+                                <field name="name"/>
+                                <field name="work_entry_type_id" options="{'no_create': True, 'no_open': True}"/>
+                                <field name="state" invisible="1" />
+                                <field name="date_start" string="Beginning" readonly="1"/>
+                                <field name="date_stop" string="End" readonly="1"/>
+                                <field name="duration" widget="float_time" readonly="1"/>
+                             </tree>
+                         </field>
+                     </page>
+                </xpath>
+
+                <xpath expr="//notebook/page[@name='worked_days_input']" position="after">
+                     <page string="Attendance" name="attendance_page">
+                         <field name="attendance_ids">
+                         </field>
+                     </page>
+                </xpath>
+<!--                <xpath expr="//notebook/page[@name='worked_days_input']" position="attributes">-->
+<!--                    <attribute name="string">Inputs</attribute>-->
+<!--                </xpath>-->
+<!--                <xpath expr="//notebook/page[@name='worked_days_input']//separator" position="attributes">-->
+<!--                    <attribute name="invisible">1</attribute>-->
+<!--                </xpath>-->
+<!--                <xpath expr="//notebook/page[@name='worked_days_input']//field[@name='worked_days_line_ids']" position="attributes">-->
+<!--                    <attribute name="invisible">1</attribute>-->
+<!--                </xpath>-->
+                <xpath expr="//notebook/page[@name='worked_days_input']//field[@name='worked_days_line_ids']//tree//field[@name='amount']" position="attributes">
+                    <attribute name="invisible">1</attribute>
                 </xpath>
             </field>
         </record>
