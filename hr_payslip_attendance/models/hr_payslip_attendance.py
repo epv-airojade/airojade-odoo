@@ -156,6 +156,26 @@ class HrPayslipAttendance(models.Model):
                 if payslip_cron:
                     payslip_cron._trigger()
 
+    def validate_attendance_custom(self):
+        for rec in self:
+            attendance_list = self.env['hr.attendance'].search([('check_in', '>=', rec.date_from), ('check_out', '<=', rec.date_to), ('employee_id' , '=', rec.employee_id.id)])
+            worked_hours = self.env['hr.contract'].search([('employee_id', '=', rec.employee_id.id), ('state', '=', 'open')]).average_hours_per_day
+            leave_list = self.env['hr.work.entry'].search(
+                [('date_start', '>=', rec.date_from), ('date_stop', '<=', rec.date_to),
+                 ('employee_id', '=', rec.employee_id.id),
+                 '|',
+                 ('work_entry_type_id', '=', 'Sick Time Off'),
+                 ('work_entry_type_id', '=', 'Vacation')
+                 ])
+            # print(defhour.average_hours_per_day)
+            # for attend in attendance_list:
+            #     if attend.worked_hours < int(worked_hours.average_hours_per_day):
+            #         for leave in leave_list:
+            #             if
+
+
+        # for att in attendance_list:
+        #    if
 
     @api.model
     def _cron_generate_pdf(self):
@@ -175,3 +195,6 @@ class HrPayslipAttendance(models.Model):
 
 
 
+
+
+# 'work_entry_type_id': self.env.ref('hr_work_entry_contract.work_entry_type_unpaid_leave').id,

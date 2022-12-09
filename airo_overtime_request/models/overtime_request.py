@@ -30,6 +30,7 @@ class airo_overtime_request(models.Model):
         default='rush',
         readonly=False, required=True)
 
+
     @api.model
     def _get_default_name(self):
         user = self.env['res.users'].has_group('hr.group_hr_user')
