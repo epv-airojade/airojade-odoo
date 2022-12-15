@@ -11,10 +11,10 @@
         <field name="body_html" type="html">
 <table border="0" cellpadding="0" cellspacing="0" style="width:100%; margin:0px auto;"><tbody>
     <tr><td valign="top" style="text-align: left; font-size: 14px;">
-        Dear <t t-esc="object.employee_id.name"></t>, a new payslip is available for you.<br/><br/>
-        Please see the attached file for reference.<br/><br/>
-        Have a nice day,<br/>
-        The HR Team
+        Dear <t t-esc="object.employee_id.name"></t>, a new payslip is available for you for the period <span t-esc="object.date_from.strftime('%B %d')" ></span> to <span t-esc="object.date_to.strftime('%d')"></span>.<br/><br/>
+        Please see attached.<br/><br/>
+        Should you have questions, feel free to contact hr@airojade.com<br/><br/>
+        Thank you, <br/>
     </td></tr>
 </tbody></table>
             </field>
