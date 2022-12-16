@@ -18,7 +18,13 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base', 'hr_attendance', 'hr_payroll', 'hr_contract', 'airo_overtime_request'
+    'depends': ['base',
+                'sale',
+                'hr_attendance',
+                'hr_payroll',
+                'hr_contract',
+                'hr_work_entry',
+                'airo_overtime_request'
     ],
 
     # always loaded
@@ -28,6 +34,7 @@
         'views/hr_contract.xml',
         'data/hr_payslip_report.xml',
         'data/report_payslip_templates.xml',
+        'data/ir_actions_report_templates_inherit.xml',
     ],
     # only loaded in demonstration mode
     'demo': [],
