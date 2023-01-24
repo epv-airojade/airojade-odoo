@@ -35,6 +35,7 @@
         'data/hr_payslip_report.xml',
         'data/report_payslip_templates.xml',
         'data/ir_actions_report_templates_inherit.xml',
+        'data/project_task_templates.xml',
     ],
     # only loaded in demonstration mode
     'demo': [],
