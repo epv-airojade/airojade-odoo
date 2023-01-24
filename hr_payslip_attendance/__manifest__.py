@@ -24,7 +24,8 @@
                 'hr_payroll',
                 'hr_contract',
                 'hr_work_entry',
-                'airo_overtime_request'
+                'airo_overtime_request',
+                'project_enterprise'
     ],
 
     # always loaded
