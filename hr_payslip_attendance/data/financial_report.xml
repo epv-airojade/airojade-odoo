@@ -19,9 +19,9 @@
                 <t t-out="company_value"/>
             </t>
         </div>
-        <div>
-             <t t-esc="account_account.name"></t>
-        </div>
+<!--        <div>-->
+<!--             <t t-esc="account_account.name"></t>-->
+<!--        </div>-->
         <div>
             <t t-if="options.get('date') and options['date'].get('string')"><t t-out="options['date']['string']"/></t>
         </div>
